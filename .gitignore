@@ -4,6 +4,9 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+.env
+env.yml
+application-secret.yml
 
 ### STS ###
 .apt_generated

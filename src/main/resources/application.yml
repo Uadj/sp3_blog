@@ -11,6 +11,21 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret:
+            scope:
+              - email
+              - profile
+  profiles:
+    include: secret
 jwt:
-  issuer: ds257873@naver.com
-  secret_key: study-springboot
+  issuer:
+  secret_key:
+
+
+
