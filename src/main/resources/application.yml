@@ -11,3 +11,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
+jwt:
+  issuer: ds257873@naver.com
+  secret_key: study-springboot
