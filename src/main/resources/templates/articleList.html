@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>Blog Article List</title>
@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <h5 class="card-title" th:text="${item.title}"></h5>
                     <p class="card-text" th:text="${item.content}"></p>
-                    <a href="#" class="btn btn-primary">Select</a>
+                    <a th:href="@{/articles/{id}(id=${item.id})}" class="btn btn-primary">Select</a>
                 </div>
             </div>
         </div>
