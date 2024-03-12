@@ -2,9 +2,11 @@ package com.example.sp3.service;
 
 import com.example.sp3.domain.Article;
 import com.example.sp3.dto.AddArticleRequest;
+import com.example.sp3.dto.UpdateArticleRequest;
 import com.example.sp3.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -25,5 +27,15 @@ public class BlogService {
     }
     public void delete(long id){
         articleRepository.deleteById(id);
+    }
+
+    @Transactional
+    public Article update(long id, UpdateArticleRequest request){
+        Article article = articleRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+
+        article.update(request.getTitle(), request.getContent());
+
+        return article;
     }
 }
