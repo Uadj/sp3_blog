@@ -6,6 +6,8 @@ import com.example.sp3.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class BlogService {
@@ -13,5 +15,8 @@ public class BlogService {
 
     public Article save(AddArticleRequest request){
         return articleRepository.save(request.toEntity());
+    }
+    public List<Article> findAll(){
+        return articleRepository.findAll();
     }
 }
